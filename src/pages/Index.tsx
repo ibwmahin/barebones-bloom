@@ -1,12 +1,39 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+import Header from '../components/Header';
+import Hero from '../components/Hero';
+import CompanyRow from '../components/CompanyRow';
+import About from '../components/About';
+import ServicesGrid from '../components/ServicesGrid';
+import PortfolioGrid from '../components/PortfolioGrid';
+import Timeline from '../components/Timeline';
+import Testimonial from '../components/Testimonial';
+import ContactCTA from '../components/ContactCTA';
+import Footer from '../components/Footer';
 
 const Index = () => {
   return (
-    <div className="min-h-screen flex items-center justify-center bg-background">
-      <div className="text-center">
-        <h1 className="text-4xl font-bold mb-4">Welcome to Your Blank App</h1>
-        <p className="text-xl text-muted-foreground">Start building your amazing project here!</p>
-      </div>
+    <div className="min-h-screen">
+      {/* Skip Link for Accessibility */}
+      <a 
+        href="#main" 
+        className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 bg-white text-black px-4 py-2 rounded z-50"
+      >
+        Skip to main content
+      </a>
+
+      <Header />
+      
+      <main id="main">
+        <Hero />
+        <CompanyRow />
+        <About />
+        <ServicesGrid />
+        <PortfolioGrid />
+        <Timeline />
+        <Testimonial />
+        <ContactCTA />
+      </main>
+      
+      <Footer />
     </div>
   );
 };

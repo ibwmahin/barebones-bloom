@@ -2,104 +2,190 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
-
+/* Portfolio Design System - Minimal & Editorial */
 @layer base {
   :root {
+    /* Base Colors */
     --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
-
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
-
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
-
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
-
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
-
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
-
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
-
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
-
-    --radius: 0.5rem;
-
-    --sidebar-background: 0 0% 98%;
-
-    --sidebar-foreground: 240 5.3% 26.1%;
-
-    --sidebar-primary: 240 5.9% 10%;
-
-    --sidebar-primary-foreground: 0 0% 98%;
-
-    --sidebar-accent: 240 4.8% 95.9%;
-
-    --sidebar-accent-foreground: 240 5.9% 10%;
-
-    --sidebar-border: 220 13% 91%;
-
-    --sidebar-ring: 217.2 91.2% 59.8%;
-  }
-
-  .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
-
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
-
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
-
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
-
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
-
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
-
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
-
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --foreground: 0 0% 6.7%;
+    
+    /* Neutral Palette */
+    --muted: 0 0% 42%;
+    --muted-light: 0 0% 95%;
+    --border: 0 0% 90%;
+    --border-light: 0 0% 96%;
+    
+    /* Dark Theme */
+    --dark: 0 0% 5.1%;
+    --dark-foreground: 0 0% 98%;
+    
+    /* Accent Colors */
+    --accent: 0 0% 96.1%;
+    --accent-foreground: 0 0% 6.7%;
+    
+    /* Interactive States */
+    --hover: 0 0% 92%;
+    --active: 0 0% 88%;
+    
+    /* Spacing Scale */
+    --space-xs: 0.5rem;
+    --space-sm: 0.75rem;
+    --space-md: 1rem;
+    --space-lg: 1.5rem;
+    --space-xl: 2rem;
+    --space-2xl: 3rem;
+    --space-3xl: 4rem;
+    --space-4xl: 6rem;
+    
+    /* Border Radius */
+    --radius-sm: 0.5rem;
+    --radius: 0.75rem;
+    --radius-lg: 1rem;
+    --radius-xl: 1.5rem;
+    --radius-pill: 999px;
+    
+    /* Typography Scale */
+    --font-display: clamp(2.5rem, 8vw, 5rem);
+    --font-hero: clamp(1.75rem, 4vw, 3rem);
+    --font-h1: clamp(1.5rem, 3vw, 2.25rem);
+    --font-h2: clamp(1.25rem, 2.5vw, 1.875rem);
+    --font-h3: 1.25rem;
+    --font-body: 1rem;
+    --font-small: 0.875rem;
+    --font-xs: 0.75rem;
+    
+    /* Shadows */
+    --shadow-sm: 0 1px 2px 0 hsl(0 0% 0% / 0.05);
+    --shadow: 0 4px 6px -1px hsl(0 0% 0% / 0.1), 0 2px 4px -2px hsl(0 0% 0% / 0.1);
+    --shadow-lg: 0 10px 15px -3px hsl(0 0% 0% / 0.1), 0 4px 6px -4px hsl(0 0% 0% / 0.1);
+    --shadow-xl: 0 20px 25px -5px hsl(0 0% 0% / 0.1), 0 8px 10px -6px hsl(0 0% 0% / 0.1);
+    
+    /* Animations */
+    --transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-slow: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    
+    /* Container */
+    --container-max: 1200px;
+    --container-padding: var(--space-lg);
+    
+    /* Header */
+    --header-height: 4rem;
   }
 }
 
 @layer base {
   * {
-    @apply border-border;
+    @apply border-0;
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-white text-[hsl(var(--foreground))] font-sans antialiased;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+    line-height: 1.6;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-medium tracking-tight;
+  }
+}
+
+/* Component Styles */
+@layer components {
+  .container {
+    @apply max-w-[var(--container-max)] mx-auto px-[var(--container-padding)];
+  }
+  
+  .btn {
+    @apply inline-flex items-center justify-center rounded-[var(--radius)] px-4 py-2 text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50;
+  }
+  
+  .btn-primary {
+    @apply bg-[hsl(var(--foreground))] text-white hover:bg-[hsl(var(--foreground))]/90;
+  }
+  
+  .btn-secondary {
+    @apply bg-white border border-[hsl(var(--border))] text-[hsl(var(--foreground))] hover:bg-[hsl(var(--hover))];
+  }
+  
+  .btn-ghost {
+    @apply hover:bg-[hsl(var(--hover))] text-[hsl(var(--foreground))];
+  }
+  
+  .card {
+    @apply bg-white rounded-[var(--radius-lg)] border border-[hsl(var(--border-light))] shadow-[var(--shadow)] transition-shadow hover:shadow-[var(--shadow-lg)];
+  }
+  
+  .card-interactive {
+    @apply cursor-pointer transition-all hover:scale-[1.02] hover:shadow-[var(--shadow-xl)];
+  }
+  
+  .section-padding {
+    @apply py-[var(--space-4xl)];
+  }
+  
+  .text-display {
+    font-size: var(--font-display);
+    @apply font-bold leading-tight tracking-tight;
+  }
+  
+  .text-hero {
+    font-size: var(--font-hero);
+    @apply font-semibold leading-tight tracking-tight;
+  }
+  
+  .text-h1 {
+    font-size: var(--font-h1);
+    @apply font-semibold leading-tight;
+  }
+  
+  .text-h2 {
+    font-size: var(--font-h2);
+    @apply font-semibold leading-tight;
+  }
+  
+  .text-muted {
+    @apply text-[hsl(var(--muted))];
+  }
+  
+  .animate-fade-up {
+    @apply opacity-0 translate-y-6 transition-all duration-700 ease-out;
+  }
+  
+  .animate-fade-up.in-view {
+    @apply opacity-100 translate-y-0;
+  }
+  
+  .logo-pill {
+    @apply inline-flex items-center justify-center px-6 py-3 rounded-full border border-[hsl(var(--border))] bg-white transition-all hover:scale-105 hover:shadow-[var(--shadow)];
+  }
+
+  /* Screen Reader Utilities */
+  .sr-only {
+    position: absolute !important;
+    width: 1px !important;
+    height: 1px !important;
+    padding: 0 !important;
+    margin: -1px !important;
+    overflow: hidden !important;
+    clip: rect(0, 0, 0, 0) !important;
+    white-space: nowrap !important;
+    border: 0 !important;
+  }
+
+  .focus\\:not-sr-only:focus {
+    position: static !important;
+    width: auto !important;
+    height: auto !important;
+    padding: inherit !important;
+    margin: inherit !important;
+    overflow: visible !important;
+    clip: auto !important;
+    white-space: normal !important;
+  }
+
+  /* Focus Styles */
+  *:focus-visible {
+    outline: 2px solid hsl(var(--foreground)) !important;
+    outline-offset: 2px !important;
   }
 }
