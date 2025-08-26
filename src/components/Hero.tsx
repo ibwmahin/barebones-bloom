@@ -1,5 +1,4 @@
 import { useEffect, useRef } from 'react';
-import heroPortrait from '../assets/hero-portrait.jpg';
 
 interface HeroProps {
   titleLines?: [string, string];
@@ -11,8 +10,8 @@ interface HeroProps {
 const Hero = ({
   titleLines = ['Product', 'Designer'],
   subtitle = 'Creating Intuitive Digital Experiences',
-  portraitUrl = heroPortrait,
-  introText = "Hi, I'm Alex. A UI/UX Designer creating intuitive digital experiences."
+  portraitUrl = 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=500&fit=crop&crop=face',
+  introText = "Hi, I'm Duvy. A UI/UX Designer Creating Intuitive Digital Experiences."
 }: HeroProps) => {
   const heroRef = useRef<HTMLElement>(null);
 
@@ -40,41 +39,33 @@ const Hero = ({
       className="min-h-screen flex items-center section-padding animate-fade-up"
     >
       <div className="container">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
+        <div className="grid lg:grid-cols-2 gap-16 items-start">
           {/* Left Column - Text */}
-          <div className="space-y-6">
-            <div className="space-y-2">
-              <h1 className="text-display">
+          <div className="space-y-8 pt-8">
+            <div className="space-y-4">
+              <h1 className="text-display leading-[0.9]">
                 <span className="block">{titleLines[0]}</span>
                 <span className="block">{titleLines[1]}</span>
               </h1>
-              <p className="text-xl text-muted max-w-lg">
-                {subtitle}
-              </p>
-            </div>
-            
-            {/* Author Intro */}
-            <div className="space-y-4 pt-8">
-              <div className="flex items-center space-x-2">
-                <span className="text-xs font-medium bg-[hsl(var(--muted-light))] px-3 py-1 rounded-full">
-                  About Me
-                </span>
-              </div>
-              <p className="text-[hsl(var(--muted))] text-lg leading-relaxed max-w-md">
-                {introText}
-              </p>
             </div>
           </div>
 
-          {/* Right Column - Portrait */}
-          <div className="flex justify-center lg:justify-end">
-            <div className="card card-interactive max-w-sm">
+          {/* Right Column - Portrait + Intro */}
+          <div className="space-y-8">
+            <div className="card max-w-sm ml-auto">
               <img
                 src={portraitUrl}
                 alt="Professional portrait"
                 className="w-full h-auto rounded-[var(--radius-lg)]"
                 loading="lazy"
               />
+            </div>
+            
+            {/* Author Intro Text */}
+            <div className="text-right max-w-sm ml-auto space-y-2">
+              <p className="text-[hsl(var(--foreground))] font-medium leading-tight">
+                {introText}
+              </p>
             </div>
           </div>
         </div>

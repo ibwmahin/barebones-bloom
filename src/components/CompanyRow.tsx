@@ -9,22 +9,23 @@ interface CompanyRowProps {
 
 const CompanyRow = ({
   companies = [
+    { name: 'com' },
     { name: 'coinbase' },
     { name: 'Spotify' },
     { name: 'zoom' },
     { name: 'slack' },
     { name: 'Dropbox' },
-    { name: 'Google' }
+    { name: 'Zoom' }
   ]
 }: CompanyRowProps) => {
   return (
-    <section className="py-16 bg-[hsl(var(--muted-light))]">
+    <section className="pb-24">
       <div className="container">
-        <div className="flex flex-wrap justify-center gap-6 md:gap-8">
+        <div className="flex flex-wrap justify-start gap-4 md:gap-6">
           {companies.map((company, index) => (
             <div
               key={company.name}
-              className="logo-pill min-w-[120px] text-center"
+              className="logo-pill min-w-[100px] text-center bg-[hsl(var(--muted-light))] border-[hsl(var(--border))]"
               style={{
                 animationDelay: `${index * 100}ms`
               }}
@@ -33,11 +34,11 @@ const CompanyRow = ({
                 <img
                   src={company.logoUrl}
                   alt={`${company.name} logo`}
-                  className="h-6 mx-auto"
+                  className="h-5 mx-auto"
                   loading="lazy"
                 />
               ) : (
-                <span className="text-sm font-medium text-[hsl(var(--muted))]">
+                <span className="text-sm font-medium text-[hsl(var(--foreground))]">
                   {company.name}
                 </span>
               )}

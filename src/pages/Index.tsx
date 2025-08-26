@@ -3,9 +3,8 @@ import Hero from '../components/Hero';
 import CompanyRow from '../components/CompanyRow';
 import About from '../components/About';
 import ServicesGrid from '../components/ServicesGrid';
-import PortfolioGrid from '../components/PortfolioGrid';
 import Timeline from '../components/Timeline';
-import Testimonial from '../components/Testimonial';
+import PortfolioGrid from '../components/PortfolioGrid';
 import ContactCTA from '../components/ContactCTA';
 import Footer from '../components/Footer';
 
@@ -27,9 +26,8 @@ const Index = () => {
         <CompanyRow />
         <About />
         <ServicesGrid />
-        <PortfolioGrid />
         <Timeline />
-        <Testimonial />
+        <PortfolioGrid />
         <ContactCTA />
       </main>
       

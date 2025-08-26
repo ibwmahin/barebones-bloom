@@ -17,39 +17,39 @@ const PortfolioGrid = ({
   projects = [
     {
       id: '1',
+      title: 'Mobile App Design',
+      category: 'App Design',
+      imageUrl: 'https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=600&h=400&fit=crop'
+    },
+    {
+      id: '2',
+      title: 'Web Dashboard',
+      category: 'Web Design',
+      imageUrl: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&h=400&fit=crop'
+    },
+    {
+      id: '3',
       title: 'E-commerce Platform',
       category: 'Web Design',
       imageUrl: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&h=400&fit=crop'
     },
     {
-      id: '2',
-      title: 'Mobile Banking App',
-      category: 'App Design',
-      imageUrl: 'https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=600&h=400&fit=crop'
-    },
-    {
-      id: '3',
-      title: 'Brand Identity System',
-      category: 'Branding',
-      imageUrl: 'https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=600&h=400&fit=crop'
-    },
-    {
       id: '4',
-      title: 'SaaS Dashboard',
-      category: 'UI Design',
-      imageUrl: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&h=400&fit=crop'
+      title: 'SaaS Platform',
+      category: 'Web Design',
+      imageUrl: 'https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?w=600&h=400&fit=crop'
     },
     {
       id: '5',
-      title: 'Food Delivery App',
-      category: 'App Design',
-      imageUrl: 'https://images.unsplash.com/photo-1498049794561-7780e7231661?w=600&h=400&fit=crop'
+      title: 'Social Media Dashboard',
+      category: 'Dashboard',
+      imageUrl: 'https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=600&h=400&fit=crop'
     },
     {
       id: '6',
-      title: 'Portfolio Website',
+      title: 'Real Estate Platform',
       category: 'Web Design',
-      imageUrl: 'https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?w=600&h=400&fit=crop'
+      imageUrl: 'https://images.unsplash.com/photo-1498049794561-7780e7231661?w=600&h=400&fit=crop'
     }
   ]
 }: PortfolioGridProps) => {
@@ -89,44 +89,52 @@ const PortfolioGrid = ({
         className="section-padding animate-fade-up"
       >
         <div className="container">
-          <div className="text-center mb-16">
-            <h2 className="text-h1 mb-4">Portfolio</h2>
-            <p className="text-lg text-muted max-w-2xl mx-auto">
-              A selection of projects that showcase my design and development capabilities.
-            </p>
-          </div>
+          <div className="grid lg:grid-cols-5 gap-12 items-start">
+            {/* Left Column - Header */}
+            <div className="lg:col-span-2 space-y-6">
+              <div className="flex items-center space-x-2 mb-6">
+                <span className="text-xs font-medium bg-[hsl(var(--muted-light))] px-4 py-2 rounded-full border border-[hsl(var(--border))]">
+                  Portfolio
+                </span>
+              </div>
+              
+              <h2 className="text-h1 leading-tight">
+                Explore my portfolio of creative solutions
+              </h2>
+              
+              <p className="text-[hsl(var(--muted))] text-sm leading-relaxed max-w-sm">
+                Explore my portfolio full of creative solutions.
+              </p>
+            </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {projects.map((project, index) => (
-              <div
-                key={project.id}
-                className="card card-interactive cursor-pointer overflow-hidden group"
-                onClick={() => openModal(project)}
-                style={{
-                  animationDelay: `${index * 100}ms`
-                }}
-              >
-                <div className="relative aspect-[4/3] overflow-hidden">
-                  <img
-                    src={project.imageUrl}
-                    alt={project.title}
-                    className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
-                    loading="lazy"
-                  />
-                  <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                    <div className="text-center text-white">
-                      <h3 className="font-semibold mb-1">{project.title}</h3>
-                      <p className="text-sm opacity-80">{project.category}</p>
-                      <div className="mt-3">
-                        <span className="inline-flex items-center text-sm">
-                          View Project →
-                        </span>
+            {/* Right Column - Portfolio Grid */}
+            <div className="lg:col-span-3 grid md:grid-cols-3 gap-4">
+              {projects.map((project, index) => (
+                <div
+                  key={project.id}
+                  className="card card-interactive cursor-pointer overflow-hidden group aspect-square"
+                  onClick={() => openModal(project)}
+                  style={{
+                    animationDelay: `${index * 100}ms`
+                  }}
+                >
+                  <div className="relative w-full h-full overflow-hidden">
+                    <img
+                      src={project.imageUrl}
+                      alt={project.title}
+                      className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+                      loading="lazy"
+                    />
+                    <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                      <div className="text-center text-white">
+                        <h3 className="font-semibold text-sm mb-1">{project.title}</h3>
+                        <p className="text-xs opacity-80">{project.category}</p>
                       </div>
                     </div>
                   </div>
                 </div>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
         </div>
       </section>

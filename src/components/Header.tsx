@@ -13,12 +13,12 @@ interface HeaderProps {
 
 const Header = ({ 
   links = [
-    { label: 'About', href: '#about' },
-    { label: 'Services', href: '#services' },
-    { label: 'Portfolio', href: '#portfolio' },
-    { label: 'Contact', href: '#contact' }
+    { label: 'Personal', href: '#personal' },
+    { label: 'Business', href: '#business' },
+    { label: 'Partner', href: '#partner' },
+    { label: 'About Us', href: '#about' }
   ],
-  logoText = 'Alex Chen',
+  logoText = 'Duvy',
   onSignIn = () => console.log('Sign in clicked')
 }: HeaderProps) => {
   const [isScrolled, setIsScrolled] = useState(false);
